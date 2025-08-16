@@ -1,3 +1,5 @@
-# NA_Plantill  
+# Notas de Aula de Homotopia I  
 
-Esta es un aplantilla para notas de aula en espanol.
+Estas son las notas de aula del curso de homotopia I de la maestria en matematicas fundamentales del centro de Paris. 
+
+El profesor a cargo es Bruno Vallette.
