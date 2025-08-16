@@ -2,3 +2,86 @@
 % Lecture 01: Introduction
 % This file is intended to be included in the main document via \input
 
+En este curso discutiremos ideas y motivaciones. Para los detalles técnicos, nos remitiremos a las notas de clase o a los libros de texto.
+
+Hacer preguntas es fundamental. Hilbert solía decir que "la pregunta es más importante que la respuesta". Nadie comprende algo a la primera; es a través de la indagación y la discusión que alcanzamos una comprensión más profunda.
+
+\subsection{Motivación}
+
+Comencemos con una perspectiva histórica.
+
+Queremos entender el problema de la deformación. El primer problema de deformación surge en el contexto de los \textbf{espacios topológicos}. Nuestros ejemplos favoritos de espacios topológicos son las \textbf{esferas}, los \textbf{toros} y los \textbf{espacios euclidianos}. Queremos saber cuándo dos espacios topológicos son <<el mismo>>. Pero, ¿qué significa <<el mismo>>?
+
+Existen varias opciones:
+
+\begin{itemize}
+    \item \textbf{Espacios homeomorfos:} Dos espacios topológicos son homeomorfos si existe una función continua, biyectiva y con inversa continua entre ellos. Esto significa que son <<el mismo>> desde el punto de vista topológico.
+\end{itemize}
+
+Por ejemplo, un círculo no es equivalente a un toro sólido, ya que si removemos dos puntos de cada uno, el círculo permanece conexo, mientras que el toro no.
+
+Sin embargo, esta noción de <<similitud>> es muy estricta. Una mente inocente podría pensar que el toro sólido es el mismo espacio que el círculo, pues si comprimimos el toro sólido, podemos deformarlo hasta obtener un círculo.
+
+Esta última idea es interesante. Muchas propiedades relevantes de los espacios topológicos se preservan bajo deformaciones continuas, como la conectividad y el número de agujeros. Por ello, nos interesa establecer una noción de equivalencia más débil que la de homeomorfismo, pero que refleje la idea intuitiva de deformación continua. Esto nos lleva a la siguiente noción:
+
+\begin{itemize}
+    \item \textbf{Equivalencia homotópica:} Dos espacios topológicos son homotópicamente equivalentes si se pueden deformar uno en el otro mediante una serie de deformaciones continuas. Así, aunque no sean homeomorfos, comparten ciertas propiedades topológicas esenciales.
+\end{itemize}
+
+La manera formal de abordar esto es dejar de lado los espacios y concentrarnos en las funciones continuas entre ellos. Establecemos una relación de equivalencia entre funciones continuas que nos permite identificar cuándo dos espacios son homotópicamente equivalentes.
+
+Este cambio de perspectiva, de puntos (en el caso topológico) a funciones (en el caso homotópico), nos permite utilizar herramientas algebraicas para estudiar propiedades topológicas. Los espacios no suelen tener buenas propiedades algebraicas, pero las funciones sí, y estas provienen del mundo de las categorías.
+
+Esta noción de equivalencia funciona bien para varios tipos de espacios, como los CW-complejos, variedades, etc. Una vez establecida la noción de equivalencia, surge la primera pregunta:
+
+\begin{pregunta}
+    ¿Podemos clasificar los espacios topológicos módulo equivalencia homotópica?
+\end{pregunta}
+
+La forma canónica de abordar esta pregunta es mediante la construcción de invariantes algebraicos. Es decir, a partir de un espacio $X$ construimos un objeto algebraico $G(X)$ que sea estable bajo equivalencias homotópicas. Si $X$ es homotópicamente equivalente a $Y$, entonces $G(X)$ es isomorfo a $G(Y)$.
+
+Por ejemplo, para distinguir $\RR^3$ de $S^1$, podemos considerar el grupo fundamental $\pi_1(X)$, que es un invariante homotópico. En este caso, $\pi_1(\RR^3) = 0$ y $\pi_1(S^1) = \ZZ$, lo que nos permite distinguir ambos espacios.
+
+\begin{pregunta}
+    ¿Podemos encontrar invariantes totales? Es decir, ¿existen invariantes tales que, si coinciden para dos espacios distintos, entonces los espacios son homotópicamente equivalentes?
+\end{pregunta}
+
+Así comienza esta historia, a principios del siglo XX, con el trabajo de Henri Poincaré. Poincaré trabajó primero con variedades y obtuvo los invariantes dados por los \textbf{grupos de homología y cohomología}. Lamentablemente, estos grupos no eran invariantes totales. Luego surgieron los \textbf{grupos de homotopía}, que tampoco lo son. Sin embargo, aparecieron nuevos invariantes: estructuras algebraicas superiores sobre estos grupos, como el \textbf{anillo de cohomología}. Pero incluso estas estructuras más sofisticadas fallaban en ser invariantes totales.
+
+No fue hasta finales del siglo XX que se consideraron las \textbf{estructuras algebraicas infinitas}, que son, en esencia, álgebras homotópicamente conmutativas actuando sobre el anillo de cohomología. Finalmente, estas estructuras sí son invariantes totales y nos permiten clasificar los espacios topológicos módulo equivalencia homotópica.
+
+\begin{pregunta}
+    ¿Significa esto que el trabajo ha terminado? ¿Ya no hay nada por hacer?
+\end{pregunta}
+
+¡En absoluto! Aún hay muchas cuestiones abiertas. Por ejemplo, ni siquiera podemos calcular los grupos de homotopía de las esferas en todos los casos.
+
+Sin embargo, en cierto sentido, hemos "linealizado" la teoría, pues esencialmente hemos reducido el problema a uno de un álgebra actuando sobre un módulo.
+
+\begin{pregunta}
+    Esto último parece muy difícil. ¿Deberíamos rendirnos?
+\end{pregunta}
+
+Eres libre de rendirte si lo deseas, pero yo no lo haré. ¿Por qué? Porque la buena matemática surge de buenas preguntas. La pregunta que surgió de toda esta discusión en busca de invariantes totales es natural:
+
+\begin{center}
+    \textbf{¿Cómo comparamos distintos tipos de invariantes?}
+\end{center}
+
+De aquí nace la necesidad de desarrollar herramientas que nos permitan comparar estos invariantes de manera efectiva. Esto desembocó en el desarrollo de la \textbf{Teoría de Categorías}. La teoría de categorías nos proporciona un marco unificado para entender y comparar diferentes tipos de invariantes a través de la noción de \textbf{functores} y \textbf{transformaciones naturales}.
+
+La teoría de categorías encapsula la noción de functorialidad. Los matemáticos no necesitaban definiciones formales para intuir la functorialidad, pero no fue hasta que surgió la necesidad de comparar invariantes como $\pi_1(X)$ y $H^*(X)$ que realmente se requirió un lenguaje más adecuado: el de "flechas entre flechas".
+
+Este nuevo lenguaje nos permitió entender mejor las relaciones entre los invariantes y también unificar el lenguaje utilizado hasta entonces. Además, permitió ver relaciones y similitudes en otras teorías matemáticas. En 1967, Quillen estudió la teoría de homotopía de espacios, donde aparecían las nociones de fibraciones, cofibraciones, categoría homotópica, equivalencias homotópicas, equivalencias débiles, etc.; también estudió conjuntos simpliciales, donde aparecían nociones análogas como las fibraciones, cofibraciones, grupos de homotopía, equivalencias débiles; y también estudió complejos de cadenas, donde también surgieron las nociones de fibraciones, cofibraciones, etc. A partir de estas observaciones, Quillen desarrolló la teoría de modelos, que proporciona un marco para estudiar estas estructuras de manera sistemática.
+
+El objetivo de este curso es estudiar los dos primeros ejemplos: \textbf{teoría de homotopía de espacios} y \textbf{conjuntos simpliciales}. Esto complementa el estudio de la teoría de complejos de cadenas vista anteriormente y nos deja listos para empezar el estudio de categorías de modelos en el futuro. No vamos a ser exhaustivos. La idea es que al final del curso, consigamos una buena comprensión de las ideas y motivaciones detrás de la teoría de homotopía, así como de los conceptos básicos necesarios para abordar la teoría de modelos y las $\infty$-categorías.
+
+\begin{pregunta}
+    ¿Por qué un geómetra simpléctico o un algebrista de representaciones debería interesarse en este curso?
+\end{pregunta}
+
+En los últimos años, hemos visto que las categorías infinitas han proporcionado un contexto fundamental para formular y abordar problemas tanto en geometría como en álgebra. Por ejemplo, han sido esenciales en el desarrollo del programa de Langlands y en la geometría algebraica moderna.
+
+\subsection{}
+
+
